@@ -82,7 +82,7 @@ const ViewDetailes = () => {
               />
               <div className="flex items-center bg-slate-200 px-2">
                 <FaDollarSign className="text-green-500"/> 
-                <span>{qtyPrice}</span>
+                <span>{qtyPrice.toFixed(2)}</span>
               </div>
             </div>
             <button onClick={()=> navigate("/cart", { state: { prod, qtyPrice, qty } })} className="bg-blue-500 w-30 py-2 hover:text-black cursor-pointer rounded-lg text-white md:text-xl md:flex md:justify-center">

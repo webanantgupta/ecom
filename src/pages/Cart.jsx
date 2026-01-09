@@ -45,13 +45,13 @@ const Cart = () => {
                     </div>
                   </td>
                   <td className="border border-black">
-                    <div className="flex justify-evenly items-center">
+                    <div className="flex justify-center items-center">
                       <FaDollarSign className="text-xl" />
                       <p className="text-xl">{prod.price}</p>
                     </div>
                   </td>
                   <td className="border border-black">
-                    <div className="flex justify-evenly items-center">
+                    <div className="flex justify-center items-center">
                       <FaDollarSign className="text-xl" />
                       <p className="text-xl">{selectedPrice}</p>
                     </div>
@@ -60,10 +60,10 @@ const Cart = () => {
               </tbody>
             </table>
           </div>
-          <div className="bg-amber-200 flex-2/12">
-            <div className="flex flex-col items-start justify-center">
-              <p>Sub - Total : {selectedPrice}</p>
-              <p>Total : {selectedPrice}</p>
+          <div className="bg-amber-200 flex-2/12 flex justify-center items-center">
+            <div className="flex flex-col">
+              <p className="text-xl font-semibold flex items-center">Sub - Total : <FaDollarSign/>{selectedPrice}</p>
+              <p className="text-2xl font-semibold text-red-500 flex items-center">Total : <FaDollarSign/>{selectedPrice}</p>
             </div>
           </div>
         </div>

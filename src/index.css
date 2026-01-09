@@ -3,7 +3,7 @@
 
 
 .product_card{
-    transition: transform 0.1s ease;
+    transition: transform 0.3s ease;
 }
 
 .product_card:hover{
@@ -11,16 +11,15 @@
 }
 
 .choose_icon{
-    transition: transform 0.1s ease;
+    transition: transform 0.3s ease;
 }
 
 .choose_icon:hover{
     transform: scale(1.05);
 }
 
-
 .brand_image_container{
-    transition: transform 0.1s ease;
+    transition: transform 0.3s ease;
 }
 
 .brand_image_container:hover{

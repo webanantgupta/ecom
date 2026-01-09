@@ -1,18 +1,19 @@
-import { BrowserRouter } from "react-router-dom"
-import AppRoute from "./AllRoutes/AppRoute"
-import ScrollTop from "./common/ScrollTop"
+import { BrowserRouter } from "react-router-dom";
+import AppRoute from "./AllRoutes/AppRoute";
+import ScrollTop from "./common/ScrollTop";
+import CartProvider from "./context/CartProvider";
 
 function App() {
-
-
   return (
-   <div>
-    <BrowserRouter>
-    <ScrollTop/>
-    <AppRoute/>
-    </BrowserRouter>
-   </div>
-  )
+    <div>
+      <CartProvider>
+        <BrowserRouter>
+          <ScrollTop />
+          <AppRoute />
+        </BrowserRouter>
+      </CartProvider>
+    </div>
+  );
 }
 
-export default App
+export default App;
