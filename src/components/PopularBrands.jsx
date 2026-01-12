@@ -1,7 +1,7 @@
 import brandLogo from "../data/PopularBrand";
 
 const PopularBrands = () => {
-  console.log(brandLogo);
+  // console.log(brandLogo);
 
   return (
     <div className="bg-slate-200 p-5 rounded-[10px]">

@@ -1,14 +1,22 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import worldImg from "../assets/world.png";
 import codImg from "../assets/cod .png";
 import originalImg from "../assets/original.png";
 import thumgsUp from "../assets/thumbsup.png";
 import { CiStar } from "react-icons/ci";
 import { FaDollarSign } from "react-icons/fa6";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import CartContext from "../context/CartContext";
 
 
 const ViewDetailes = () => {
+
+const {cart, addToCart} = useContext(CartContext);
+console.log(cart);
+console.log(addToCart);
+
+
+
   const locate = useLocation();
   const prod = locate.state;
   console.log(prod);
@@ -28,7 +36,7 @@ const ViewDetailes = () => {
   setqty(number);
   }
 
-  const navigate = useNavigate();
+
 
 
   return (
@@ -78,14 +86,16 @@ const ViewDetailes = () => {
               // }
 
               // }
-              onChange={(e)=> handleQtyChange(Number(e.target.value))}
+              // onChange={(e)=> handleQtyChange(Number(e.target.value))}
               />
               <div className="flex items-center bg-slate-200 px-2">
                 <FaDollarSign className="text-green-500"/> 
                 <span>{qtyPrice.toFixed(2)}</span>
               </div>
             </div>
-            <button onClick={()=> navigate("/cart", { state: { prod, qtyPrice, qty } })} className="bg-blue-500 w-30 py-2 hover:text-black cursor-pointer rounded-lg text-white md:text-xl md:flex md:justify-center">
+            <button  
+            onClick={()=>addToCart(prod,qty)}
+            className="bg-blue-500 w-30 py-2 hover:text-black cursor-pointer rounded-lg text-white md:text-xl md:flex md:justify-center">
              Add
             </button>
           </div>

@@ -2,9 +2,14 @@ import logo from "../assets/ecomlogo.webp"
 import { IoSearchSharp } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import CartContext from "../context/CartContext";
 
 
 const Header = () =>{
+    const {cart = []} = useContext(CartContext) || {};
+    const totalQuantity = (cart || []).reduce((acc,curr) => acc + (curr.quantity || 0),0);
+
     return (
          <div className="bg-slate-200 flex justify-between items-center h-20 px-5">
       <Link to={"/"}>
@@ -23,11 +28,11 @@ const Header = () =>{
         </div>
       </div>
       <div className="relative">
-        <Link to={"/cart"}>
-        <MdOutlineShoppingCart className="text-3xl" />
+        <Link to={"/cart"} className="relative">
+          <MdOutlineShoppingCart className="text-3xl" /> 
         </Link>
         <div className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex justify-center items-center">
-            {0}
+            {totalQuantity}
         </div>
       </div>
     </div>

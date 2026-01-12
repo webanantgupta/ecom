@@ -1,9 +1,7 @@
-
 import { useContext } from "react";
 import Choose from "../components/Choose";
 import HeroImageCarousal from "../components/HeroImageCarousal";
 import PopularBrands from "../components/PopularBrands";
-import Footer from "../common/Footer";
 import { HiOutlineCurrencyDollar } from "react-icons/hi2";
 import { Link, useNavigate } from "react-router-dom";
 import CartContext from "../context/CartContext";
@@ -11,7 +9,8 @@ import CartContext from "../context/CartContext";
 const Home = () => {
 
   const navigate = useNavigate();
-  const { products } = useContext(CartContext) || {};
+  const { products, addToCart } = useContext(CartContext);
+console.log(products);
 
 
   return (
@@ -47,7 +46,7 @@ const Home = () => {
                     <button onClick={()=> navigate("/view", {state:obj})} className="bg-slate-200 border-2 hover:bg-blue-500 hover:text-white hover:border-blue-500 duration-500 px-10 py-1 rounded-lg text-black cursor-pointer">
                         View
                     </button>
-                    <button className="bg-blue-500 hover:text-black duration-500 px-10 py-1 cursor-pointer rounded-lg text-white">Add</button>
+                    <button onClick={() => { addToCart(obj); }} className="bg-blue-500 hover:text-black duration-500 px-10 py-1 cursor-pointer rounded-lg text-white">Add</button>
                   </div>
                 </div>
               );

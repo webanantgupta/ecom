@@ -1,7 +1,7 @@
 import data from "../data/Whychoose";
 
 const Choose = () => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="bg-slate-200 flex flex-col justify-evenly lg:flex-row  lg:items-center p-8 rounded-[10px] choose_container">
